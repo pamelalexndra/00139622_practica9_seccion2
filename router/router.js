@@ -4,7 +4,7 @@ import express from "express";
 import { verifyToken } from "../utils/middleware/index.js";
 
 // Módulos controladores importados
-import { SingIn } from "../controllers/signin.js";
+import { SignIn } from "../controllers/signin.js";
 import { SingUp } from "../controllers/signup.js";
 import { displayHome } from "../controllers/displayHome.js";
 import { getUserById, getUsers, getUsersDesc } from "../controllers/getUsers.js";
@@ -16,7 +16,7 @@ const router = express.Router();
 
 // Routes
 router.get("/", displayHome);
-router.post("/signin", SingIn);
+router.post("/signin", SignIn);
 router.post("/signup", SingUp);
 router.get("/users", verifyToken, getUsers);
 router.get("/users/:id", verifyToken, getUserById);
